@@ -16,7 +16,7 @@
 | -------- | ----------------------- |
 | Model Name | LLMArk-v1.0      |
 | Task Type | Multimodal decision making/prediction/question answering |
-| Infrastructure | Siglip-MLP-LLM |
+| Basic Framework | Siglip-MLP-LLM |
 
 ### Download method
 ```bash
