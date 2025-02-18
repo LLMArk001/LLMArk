@@ -26,7 +26,7 @@ pip install .
 
 ## 📥 Download our trained weights
 
-### Basic Information
+### Basic Information 
 | Property     | Specification                    |
 | -------- | ----------------------- |
 | Model Name | LLMArk-v1.0      |
