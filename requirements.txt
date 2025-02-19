@@ -138,8 +138,6 @@ jupyterlab_server==2.27.1
 jupyterlab_widgets==3.0.10
 kiwisolver==1.4.5
 linkify-it-py==2.0.3
-llava==1.7.0.dev0
-llava==1.7.0.dev0
 lmms_eval==0.1.1
 lxml==5.2.1
 markdown-it-py==2.2.0

@@ -6,9 +6,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "llava"
-version = "1.7.0.dev0"
-description = "LLaVA OneVision: The Next Generation of LLaVA with Better Image and Video Understanding Capabilities"
+name = "llmark"
+version = "1.0.0"
+description = "LLMArk: Multimodal Large Language Model For Flood Risk Assessment"
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -26,7 +26,7 @@ standalone = [
 
 
 train = [
-    "llava[standalone]",
+    "llmark[standalone]",
     "numpy==1.26.1",
     "open_clip_torch",
     "fastapi",
@@ -61,11 +61,10 @@ train = [
 ]
 
 [project.urls]
-"Homepage" = "https://llava-vl.github.io"
-"Bug Tracker" = "https://github.com/haotian-liu/LLaVA/issues"
+"Homepage" = "https://github.com/LLMArk001/LLMArk"
 
 [tool.setuptools.packages.find]
-include = ["llava*", "trl*"]
+include = ["llmark*"]
 exclude = [
     "assets*",
     "benchmark*",
