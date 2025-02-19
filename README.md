@@ -42,3 +42,6 @@ The demo code **demo.py** for the example we provided allows you to change the p
 ```bash
 python demo.py
 ```
+
+## Illustraion of LLMArk
+![Run](image/run.gif)
