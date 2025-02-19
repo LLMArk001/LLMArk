@@ -21,7 +21,7 @@ cd LLMArk
 conda create -n llmark python=3.10
 conda activate llmark
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
-pip install .
+pip install -e ".[train]"
 ```
 
 ## 📥 Download our trained weights
@@ -57,7 +57,7 @@ device_map = "auto"
 tokenizer, model, image_processor, max_length = load_pretrained_model(pretrained, device_map=device_map)
 model.eval()
 
-image_path = "global_imgs/Vietnam2.jpg"
+image_path = "path/to/your/image"
 question = "What is the overall flooding risk in this scene, and what general recommendations can be given?"
 image = Image.open(image_path)
 image_tensor = process_images([image], image_processor, model.config)
