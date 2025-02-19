@@ -21,7 +21,7 @@ cd LLMArk
 conda create -n llmark python=3.10
 conda activate llmark
 pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
-pip install -e ".[train]"
+pip install -e ".[inference]"
 ```
 
 ## 📥 Download our trained weights
