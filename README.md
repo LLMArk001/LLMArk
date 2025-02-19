@@ -54,30 +54,22 @@ warnings.filterwarnings("ignore")
 pretrained = "LLMArk001/LLMArk"
 device = "cuda"
 device_map = "auto"
-tokenizer, model, image_processor, max_length = load_pretrained_model(pretrained, device_map=device_map)  # Add any other thing you want to pass in llava_model_args
-
+tokenizer, model, image_processor, max_length = load_pretrained_model(pretrained, device_map=device_map)
 model.eval()
-
 
 image_path = "global_imgs/Vietnam2.jpg"
 question = "What is the overall flooding risk in this scene, and what general recommendations can be given?"
-
 image = Image.open(image_path)
-
 image_tensor = process_images([image], image_processor, model.config)
 image_tensor = [_image.to(dtype=torch.float16, device=device) for _image in image_tensor]
-
 question = DEFAULT_IMAGE_TOKEN + "\n" + question
 conv = copy.deepcopy(conv_templates)
 conv.append_message(conv.roles[0], question)
 conv.append_message(conv.roles[1], None)
 prompt_question = conv.get_prompt()
-
 prompt_question = prompt_boxes(prompt_question, image_path)
-
 input_ids = tokenizer_image_token(prompt_question, tokenizer, IMAGE_TOKEN_INDEX, return_tensors="pt").unsqueeze(0).to(device)
 image_sizes = [image.size]
-
 
 cont = model.generate(
 	input_ids,
@@ -92,6 +84,4 @@ cont = model.generate(
 
 text_outputs = tokenizer.batch_decode(cont, skip_special_tokens=True)
 print(text_outputs[0])
-
-
 ```
